@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "X8EhgMUC0tM=",
+  "success": true,
+  "projectFilePath": "/home/mrnani/Projects/WebAPI/WebAPI.csproj",
+  "expectedPackageFiles": [
+    "/home/mrnani/.nuget/packages/htmlagilitypack/1.12.1/htmlagilitypack.1.12.1.nupkg.sha512",
+    "/home/mrnani/.nuget/packages/httpclienthandler/1.0.5/httpclienthandler.1.0.5.nupkg.sha512",
+    "/home/mrnani/.nuget/packages/microsoft.aspnetcore.openapi/9.0.6/microsoft.aspnetcore.openapi.9.0.6.nupkg.sha512",
+    "/home/mrnani/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512",
+    "/home/mrnani/.nuget/packages/taglibsharp/2.3.0/taglibsharp.2.3.0.nupkg.sha512",
+    "/home/mrnani/.nuget/packages/tiktokdownloader/1.0.8/tiktokdownloader.1.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}

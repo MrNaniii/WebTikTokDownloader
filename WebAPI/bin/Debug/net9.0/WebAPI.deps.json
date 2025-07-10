@@ -1,0 +1,125 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "WebAPI/1.0.0": {
+        "dependencies": {
+          "HttpClientHandler": "1.0.5",
+          "Microsoft.AspNetCore.OpenApi": "9.0.6",
+          "TikTokDownloader": "1.0.8"
+        },
+        "runtime": {
+          "WebAPI.dll": {}
+        }
+      },
+      "HtmlAgilityPack/1.12.1": {
+        "runtime": {
+          "lib/net8.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.12.1.0",
+            "fileVersion": "1.12.1.0"
+          }
+        }
+      },
+      "HttpClientHandler/1.0.5": {
+        "runtime": {
+          "lib/net6.0/RestClient.dll": {
+            "assemblyVersion": "1.0.5.0",
+            "fileVersion": "1.0.5.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi/9.0.6": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.6.17"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "assemblyVersion": "9.0.6.0",
+            "fileVersion": "9.0.625.26701"
+          }
+        }
+      },
+      "Microsoft.OpenApi/1.6.17": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "1.6.17.0",
+            "fileVersion": "1.6.17.0"
+          }
+        }
+      },
+      "TagLibSharp/2.3.0": {
+        "runtime": {
+          "lib/netstandard2.0/TagLibSharp.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.0"
+          }
+        }
+      },
+      "TikTokDownloader/1.0.8": {
+        "dependencies": {
+          "HtmlAgilityPack": "1.12.1",
+          "TagLibSharp": "2.3.0"
+        },
+        "runtime": {
+          "lib/net7.0/TikTokDownloader.dll": {
+            "assemblyVersion": "1.0.7.0",
+            "fileVersion": "1.0.7.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WebAPI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HtmlAgilityPack/1.12.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SP6/2Y26CXtxjXn0Wwsom9Ek35SNWKHEu/IWhNEFejBSSVWWXPRSlpqpBSYWv1SQhYFnwMO01xVbEdK3iRR4hg==",
+      "path": "htmlagilitypack/1.12.1",
+      "hashPath": "htmlagilitypack.1.12.1.nupkg.sha512"
+    },
+    "HttpClientHandler/1.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eZI4JVes50dHjNfawYNnZ+l2wC69mZhL1UVt+cIaw5MNLL3H6P1lx8CNPzJn0AbYh56j5IzVhrMGX9qYEWiqfw==",
+      "path": "httpclienthandler/1.0.5",
+      "hashPath": "httpclienthandler.1.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.OpenApi/9.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MOJ4DG1xd3NlWMYh+JdGNT9uvBtEk1XQU/FQlpNZFlAzM8t0oB5IimvnGlnK7jmyY4vQagLPB1xw1HjJ8CHrZg==",
+      "path": "microsoft.aspnetcore.openapi/9.0.6",
+      "hashPath": "microsoft.aspnetcore.openapi.9.0.6.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/1.6.17": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Le+kehlmrlQfuDFUt1zZ2dVwrhFQtKREdKBo+rexOwaCoYP0/qpgT9tLxCsZjsgR5Itk1UKPcbgO+FyaNid/bA==",
+      "path": "microsoft.openapi/1.6.17",
+      "hashPath": "microsoft.openapi.1.6.17.nupkg.sha512"
+    },
+    "TagLibSharp/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Qo4z6ZjnIfbR3Us1Za5M2vQ97OWZPmODvVmepxZ8XW0UIVLGdO2T63/N3b23kCcyiwuIe0TQvMEQG8wUCCD1mA==",
+      "path": "taglibsharp/2.3.0",
+      "hashPath": "taglibsharp.2.3.0.nupkg.sha512"
+    },
+    "TikTokDownloader/1.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sfVACJtIQhnBZaPoRBFH4knRS1qDO07M1tmu//eJYNyVbMLfg8imQ4fdwS/d1QF6zWY/DbmK/OL8GUQ+nVeGcg==",
+      "path": "tiktokdownloader/1.0.8",
+      "hashPath": "tiktokdownloader.1.0.8.nupkg.sha512"
+    }
+  }
+}
