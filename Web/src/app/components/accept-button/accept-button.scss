@@ -1,0 +1,27 @@
+.accept-button{
+    background: linear-gradient(to right, #ff9100, #cb6ce6);
+    width: 400px;
+    // max-width: 400px;
+    border-radius: 15px;
+    max-height: 100px;
+    margin-top: 30px;
+
+    justify-content: center;
+    display: flex;
+}
+
+.accept-button:hover{
+    transform: scale(1.05);
+    transition: transform 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.accept-button-img{
+    width: 80px;
+    height: 80px;
+    
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}

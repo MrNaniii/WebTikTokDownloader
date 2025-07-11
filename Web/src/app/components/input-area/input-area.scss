@@ -1,0 +1,41 @@
+.input-area {
+  display: flex;
+  align-items: center;
+  background-color: #efefef;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-text {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  padding: 8px 0;
+  outline: none;
+  color: #333;
+  padding-left: 15px;
+
+  &::placeholder {
+    color: #858585;
+  }
+}
+
+.cross-icon {
+  width: 50px;
+  height: 50px;
+  padding-right: 2px;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.cross-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out; 
+}
