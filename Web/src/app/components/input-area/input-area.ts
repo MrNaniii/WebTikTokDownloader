@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -10,6 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './input-area.scss'
 })
 export class InputArea {
+  @Input() disabled = false;
+  @Input() text = 'Download';
+  @Output() click = new EventEmitter<void>();
   inputText = '';
   showCross = false;
 

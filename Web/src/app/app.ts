@@ -18,10 +18,14 @@ import { NgZone } from '@angular/core';
 export class App {
   protected title = 'WebTikTokDownloader';
 
-  showDownloads = false;
   url = '';
   contentType: string | null = null;
-    buttonsDisabled = false;
+  showDownloads = false;
+  loadingText: string | null = null;
+
+  mainButtonVisible = true;
+  mediaDownloadInProgress = false;
+  musicDownloadInProgress = false;
 
   private tiktokUrlRegex = /https?:\/\/(vm|vt|www)\.tiktok\.com\/\S+/i;
 
@@ -35,30 +39,39 @@ export class App {
     this.url = newUrl.trim();
     this.showDownloads = false;
     this.contentType = null;
-    this.buttonsDisabled = true;
-    setTimeout(() => {
-      this.buttonsDisabled = false;
-      this.cdr.detectChanges(); 
-    }, 3000);
+
+    if (!this.url) {
+      this.mainButtonVisible = true;
+    }
+
+    this.cdr.detectChanges();
   }
 
   onAcceptClick() {
     if (!this.url) return;
 
-    this.showDownloads = true;
+    this.mainButtonVisible = false;
+    this.loadingText = 'Downloading...';
+    this.showDownloads = false;
     this.contentType = null;
-    this.buttonsDisabled = true; 
-    setTimeout(() => {
-      this.buttonsDisabled = false;
-      this.cdr.detectChanges();
-    }, 3000);
 
     this.tiktokService.detectType(this.url).subscribe({
       next: res => {
         this.contentType = res.type;
+
+        setTimeout(() => {
+          this.loadingText = null;
+          this.showDownloads = true;
+          this.cdr.detectChanges();
+        }, 1000);
       },
       error: () => {
+        this.url = '';
+        this.loadingText = null;
+        this.mainButtonVisible = true;
+        this.showDownloads = false;
         this.contentType = null;
+        this.cdr.detectChanges();
         alert('Invalid link.');
       }
     });
@@ -80,53 +93,62 @@ export class App {
     window.URL.revokeObjectURL(url);
   }
 
-   downloadMedia() {
-    if (this.buttonsDisabled) return; 
+  downloadMedia() {
+    if (this.mediaDownloadInProgress) return; 
 
-    this.buttonsDisabled = true; 
-    setTimeout(() => {
-      this.buttonsDisabled = false;
-      this.cdr.detectChanges();
-    }, 3000);
+    this.mediaDownloadInProgress = true;
+
+    const onComplete = () => {
+      setTimeout(() => {
+        this.mediaDownloadInProgress = false;
+        this.cdr.detectChanges();
+      }, 3000);
+    };
 
     if (this.contentType === 'video') {
       this.tiktokService.downloadVideo(this.url).subscribe({
         next: blob => {
           this.downloadFile(blob, 'video.mp4');
+          onComplete();
         },
         error: () => {
-          alert('Error video downloading.');
+          alert('Error video downloads');
+          onComplete();
         }
       });
     } else if (this.contentType === 'photo') {
       this.tiktokService.downloadPhoto(this.url).subscribe({
         next: blob => {
           this.downloadFile(blob, 'photos.zip');
+          onComplete();
         },
         error: () => {
-          alert('Error photo downloading.');
+          alert('Error photo downloads.');
+          onComplete();
         }
       });
-    } else {
-      alert('Unsupported content type for download.');
     }
   }
 
   downloadMusic() {
-    if (this.buttonsDisabled) return;
+    if (this.musicDownloadInProgress) return; 
 
-    this.buttonsDisabled = true;
-    setTimeout(() => {
-      this.buttonsDisabled = false;
-      this.cdr.detectChanges();
-    }, 3000);
+    this.musicDownloadInProgress = true;
 
     this.tiktokService.downloadMusic(this.url).subscribe({
       next: blob => {
         this.downloadFile(blob, 'music.mp3');
+        setTimeout(() => {
+          this.musicDownloadInProgress = false;
+          this.cdr.detectChanges();
+        }, 3000);
       },
       error: () => {
-        alert('Error music downloading.');
+        alert('Error music downloads.');
+        setTimeout(() => {
+          this.musicDownloadInProgress = false;
+          this.cdr.detectChanges();
+        }, 3000);
       }
     });
   }

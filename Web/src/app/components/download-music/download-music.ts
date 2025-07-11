@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,4 +8,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './download-music.scss'
 })
 export class DownloadMusic {
+  @Input() disabled = false;
+  @Input() text = 'Download music';
+  @Output() click = new EventEmitter<void>();
 }

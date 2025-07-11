@@ -2,24 +2,30 @@
   <app-header-text></app-header-text>
   <app-input-area (urlChange)="onUrlUpdate($event)"></app-input-area>
 
-  <app-accept-button 
-    *ngIf="!showDownloads"
-    (click)="onAcceptClick()">
-  </app-accept-button>
+  <div *ngIf="mainButtonVisible">
+    <app-accept-button
+      (click)="onAcceptClick()"
+      text="Download">
+    </app-accept-button>
+  </div>
 
-  <div class="download-app" [style.display]="showDownloads ? 'flex' : 'none'">
-    <app-download-media 
+  <div *ngIf="loadingText" class="loading-text">
+    {{ loadingText }}
+  </div>
+
+  <div *ngIf="showDownloads" class="download-app">
+    <app-download-media
       (click)="downloadMedia()"
-      [class.disabled]="buttonsDisabled"
-      [attr.aria-disabled]="buttonsDisabled ? true : null"
-      [style.pointerEvents]="buttonsDisabled ? 'none' : 'auto'">
+      [disabled]="mediaDownloadInProgress"
+      [text]="mediaDownloadInProgress ? 'Downloading...' : (contentType === 'video' ? 'Download video' : 'Download photo')"
+      [class.disabled]="mediaDownloadInProgress">
     </app-download-media>
-    
-    <app-download-music 
+
+    <app-download-music
       (click)="downloadMusic()"
-      [class.disabled]="buttonsDisabled"
-      [attr.aria-disabled]="buttonsDisabled ? true : null"
-      [style.pointerEvents]="buttonsDisabled ? 'none' : 'auto'">
+      [disabled]="musicDownloadInProgress"
+      [text]="musicDownloadInProgress ? 'Downloading...' : 'Download music'"
+      [class.disabled]="musicDownloadInProgress">
     </app-download-music>
   </div>
 </div>

@@ -216,11 +216,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mrnani/Projects/WebAPI/WebAPI.csproj",
+      "projectUniqueName": "/home/mrnani/Projects/Web123/WebAPI/WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "/home/mrnani/Projects/WebAPI/WebAPI.csproj",
+      "projectPath": "/home/mrnani/Projects/Web123/WebAPI/WebAPI.csproj",
       "packagesPath": "/home/mrnani/.nuget/packages/",
-      "outputPath": "/home/mrnani/Projects/WebAPI/obj/",
+      "outputPath": "/home/mrnani/Projects/Web123/WebAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/mrnani/.nuget/NuGet/NuGet.Config"

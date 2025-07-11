@@ -1,9 +1,6 @@
-<div class="download-music-button">
-    <div class="download-music-text">
-      Download MP3
-    </div>
-    <div class="download-music-button-img">
-        <img src="/assets/images/music.svg">
-    </div>
-</div>
-
+<button class="download-music-button" [disabled]="disabled" (click)="click.emit()">
+  <div class="download-music-text">{{ text }}</div>
+  <div class="download-music-button-img">
+    <img src="/assets/images/music.svg">
+  </div>
+</button>

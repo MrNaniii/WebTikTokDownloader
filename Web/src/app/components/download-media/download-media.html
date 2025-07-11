@@ -1,8 +1,6 @@
-<div class="download-button">
-  <div class="download-text">
-    Download media
-  </div>
+<button class="download-button" [disabled]="disabled" (click)="click.emit()">
+  <div class="download-text">{{ text }}</div>
   <div class="download-button-img">
     <img src="/assets/images/video.svg" />
   </div>
-</div>
+</button>
